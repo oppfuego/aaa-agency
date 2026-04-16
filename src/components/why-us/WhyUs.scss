@@ -1,0 +1,168 @@
+.why-us {
+  background: #fafafa;
+  padding: 80px 0;
+
+  &.is-mobile {
+    padding: 56px 0;
+  }
+}
+
+.why-us__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &.is-mobile {
+    padding: 0 16px;
+  }
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+
+  &.is-mobile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.why-us__badge {
+  display: inline-block;
+  background: #111;
+  color: #ffd600;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.why-us__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 28px;
+  line-height: 1.2;
+
+  &.is-mobile {
+    font-size: 1.3rem;
+  }
+}
+
+.why-us__reasons,
+.why-us__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.why-us__reason-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-left: 4px solid #ff3333;
+  border-radius: 0 8px 8px 0;
+  padding: 18px 20px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.why-us__reason-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 7px;
+}
+
+.why-us__reason-text {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.why-us__stat-card {
+  background: #111;
+  border-radius: 8px;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+
+  &.is-mobile {
+    padding: 22px 24px;
+  }
+}
+
+.why-us__stat-glow {
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 51, 51, 0.07);
+  pointer-events: none;
+}
+
+.why-us__stat-value {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #ffd600;
+  line-height: 1;
+  min-width: 70px;
+
+  &.is-mobile {
+    font-size: 32px;
+  }
+}
+
+.why-us__stat-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.why-us__contract-card {
+  border: 2px solid #ff3333;
+  border-radius: 8px;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.why-us__contract-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.why-us__contract-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  line-height: 1.55;
+}

@@ -1,0 +1,156 @@
+.reviews {
+  background: #f8f8f8;
+  padding: 80px 0;
+
+  &.is-mobile {
+    padding: 56px 0;
+  }
+}
+
+.reviews__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &.is-mobile {
+    padding: 0 16px;
+  }
+}
+
+.reviews__heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews__badge {
+  display: inline-block;
+  background: #ff3333;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.reviews__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+
+  &.is-mobile {
+    font-size: 1.4rem;
+  }
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  &.is-mobile {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.reviews__card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+  }
+
+  &.is-mobile {
+    padding: 18px;
+  }
+}
+
+.reviews__person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviews__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reviews__avatar-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #ffd600;
+}
+
+.reviews__name {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #111;
+}
+
+.reviews__role {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.reviews__stars {
+  color: #ffd600;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.reviews__text {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.reviews__cta-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.reviews__cta {
+  display: inline-block;
+  background: #ff3333;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #cc0000;
+  }
+}

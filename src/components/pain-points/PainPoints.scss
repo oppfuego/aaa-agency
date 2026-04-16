@@ -1,0 +1,130 @@
+.pain-points {
+  background: #fff;
+  padding: 80px 0;
+
+  &.is-mobile {
+    padding: 56px 0;
+  }
+}
+
+.pain-points__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &.is-mobile {
+    padding: 0 16px;
+  }
+}
+
+.pain-points__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+
+  &.is-mobile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.pain-points__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+
+  &.is-mobile {
+    font-size: 1.4rem;
+  }
+}
+
+.pain-points__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: start;
+
+  &.is-mobile {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.pain-points__pain {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: #ff3333;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+}
+
+.pain-points__solution {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pain-points__result-banner {
+  margin-top: 20px;
+  background: #ff3333;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pain-points__results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pain-points__result-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-left: 4px solid #ff3333;
+  border-radius: 0 6px 6px 0;
+  padding: 16px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.pain-points__result-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.pain-points__result-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.pain-points__result-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.55;
+}

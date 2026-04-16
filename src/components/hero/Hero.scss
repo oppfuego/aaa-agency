@@ -1,0 +1,235 @@
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.arrow-bounce {
+  animation: bounceDown 1.4s ease-in-out infinite;
+}
+
+.hero-fade-1 { animation: heroFadeIn 0.6s ease 0.1s both; }
+.hero-fade-2 { animation: heroFadeIn 0.6s ease 0.25s both; }
+.hero-fade-3 { animation: heroFadeIn 0.6s ease 0.4s both; }
+.hero-fade-4 { animation: heroFadeIn 0.6s ease 0.55s both; }
+.hero-fade-5 { animation: heroFadeIn 0.6s ease 0.7s both; }
+
+.hero {
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, #1a1a1a 0, #1a1a1a 1px, transparent 0, transparent 50%);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero__glow {
+  position: absolute;
+  bottom: -100px;
+  left: -60px;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(255, 51, 51, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &.is-mobile {
+    padding: 60px 16px 48px;
+  }
+}
+
+.hero__badge {
+  display: inline-block;
+  background: #ff3333;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  color: #fff;
+  max-width: 680px;
+  margin-bottom: 0;
+
+  &.is-mobile {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+}
+
+.hero__title-accent {
+  color: #cc0000;
+  text-shadow: 0 0 30px rgba(200, 0, 0, 0.5), 0 0 60px rgba(200, 0, 0, 0.15);
+}
+
+.hero__description {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #aaa;
+  margin-top: 18px;
+  max-width: 480px;
+  line-height: 1.65;
+
+  &.is-mobile {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.hero__tag {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ccc;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  &.is-mobile {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+.hero__cta-wrap {
+  margin-top: 28px;
+}
+
+.hero__cta {
+  display: inline-block;
+  background: #ff3333;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+
+  &:hover {
+    background: #cc0000;
+  }
+
+  &.is-mobile {
+    font-size: 12px;
+    padding: 14px 24px;
+  }
+}
+
+.hero__arrows {
+  margin-top: 32px;
+  display: none;
+  gap: 10px;
+
+  &.is-mobile {
+    display: flex;
+  }
+}
+
+.hero__arrow {
+  color: #ff3333;
+  font-size: 22px;
+  display: block;
+
+  &:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+.hero__stats {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid #222;
+  width: auto;
+
+  &.is-mobile {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+    width: 100%;
+  }
+}
+
+.hero__stat-value {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: #ffd600;
+  line-height: 1;
+
+  &.is-mobile {
+    font-size: 22px;
+  }
+}
+
+.hero__stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #555;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,119 @@
+.app-shell {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+.app-content {
+  font-family: "Inter", sans-serif;
+}
+
+.app-preview {
+  background: #1c1c1e;
+  min-height: 100vh;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.app-preview__grid {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-preview__device-wrap {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+}
+
+.app-preview__device {
+  width: 390px;
+  background: #0a0a0a;
+  border-radius: 54px;
+  padding: 14px 6px;
+  box-shadow: 0 0 0 1px #3a3a3a, 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 0 0 1px #1a1a1a;
+  position: relative;
+}
+
+.app-preview__side-button {
+  position: absolute;
+  width: 4px;
+  background: #2a2a2a;
+}
+
+.app-preview__side-button--left-1 {
+  left: -4px;
+  top: 100px;
+  height: 36px;
+  border-radius: 4px 0 0 4px;
+}
+
+.app-preview__side-button--left-2 {
+  left: -4px;
+  top: 148px;
+  height: 56px;
+  border-radius: 4px 0 0 4px;
+}
+
+.app-preview__side-button--left-3 {
+  left: -4px;
+  top: 212px;
+  height: 56px;
+  border-radius: 4px 0 0 4px;
+}
+
+.app-preview__side-button--right {
+  right: -4px;
+  top: 168px;
+  height: 80px;
+  border-radius: 0 4px 4px 0;
+}
+
+.app-preview__screen {
+  background: #000;
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  height: 760px;
+}
+
+.app-preview__island {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 34px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #1a1a1a;
+}
+
+.app-preview__scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.app-preview__label {
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.app-desktop {
+  padding-top: 48px;
+}
