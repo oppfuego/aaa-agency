@@ -18,13 +18,11 @@
 }
 
 .why-us__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 
   &.is-mobile {
-    grid-template-columns: 1fr;
     gap: 32px;
   }
 }
@@ -46,7 +44,7 @@
 .why-us__title {
   font-family: "Inter", sans-serif;
   font-weight: 900;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-size: clamp(3.6rem, 2.5vw, 10rem);
   color: #111;
   text-transform: uppercase;
   letter-spacing: -0.5px;
@@ -54,80 +52,97 @@
   line-height: 1.2;
 
   &.is-mobile {
-    font-size: 1.3rem;
+    font-size: 2rem;
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
   }
 }
 
-.why-us__reasons,
-.why-us__stats {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.why-us__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
-.why-us__reason-card {
+.why-us__feature-card {
   background: #fff;
   border: 1px solid #eee;
-  border-left: 4px solid #ff3333;
-  border-radius: 0 8px 8px 0;
-  padding: 18px 20px;
-  transition: box-shadow 0.2s;
+  border-radius: 22px;
+  min-height: 540px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(17, 17, 17, 0.12);
   }
+}
+
+.why-us__feature-image {
+  height: 300px;
+  background:
+    linear-gradient(145deg, rgba(255, 51, 51, 0.18), rgba(255, 214, 0, 0.06)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 35%),
+    linear-gradient(180deg, #272727, #111);
+}
+
+.why-us__feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 28px 32px;
 }
 
 .why-us__reason-title {
   font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 800;
+  font-size: 14px;
   color: #111;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 7px;
+  letter-spacing: 0.6px;
+  line-height: 1.35;
 }
 
 .why-us__reason-text {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.why-us__stat-card {
-  background: #111;
-  border-radius: 8px;
-  padding: 26px 30px;
-  display: flex;
-  align-items: center;
+.why-us__stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+}
+
+.why-us__feature-stat {
+  background: #111;
+  border-radius: 18px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 128px;
+  justify-content: center;
 
   &.is-mobile {
-    padding: 22px 24px;
+    padding: 20px;
   }
-}
-
-.why-us__stat-glow {
-  position: absolute;
-  right: -16px;
-  top: -16px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 51, 51, 0.07);
-  pointer-events: none;
 }
 
 .why-us__stat-value {
   font-family: "Inter", sans-serif;
   font-weight: 900;
-  font-size: 40px;
+  font-size: clamp(2.25rem, 3vw, 3.25rem);
   color: #ffd600;
   line-height: 1;
-  min-width: 70px;
 
   &.is-mobile {
     font-size: 32px;
@@ -136,33 +151,81 @@
 
 .why-us__stat-label {
   font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  color: #aaa;
+  font-weight: 600;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.68);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.9px;
 }
 
 .why-us__contract-card {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
   border: 2px solid #ff3333;
-  border-radius: 8px;
-  padding: 18px 20px;
+  border-radius: 18px;
+  padding: 24px 28px;
   text-align: center;
+  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.05);
 }
 
 .why-us__contract-title {
   font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 12px;
   color: #111;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .why-us__contract-text {
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   color: #777;
-  margin-top: 6px;
-  line-height: 1.55;
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1100px) {
+  .why-us__features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-us__stats-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-us__feature-card {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 720px) {
+  .why-us__features {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us__stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us__feature-card {
+    min-height: 0;
+  }
+
+  .why-us__feature-image {
+    height: 220px;
+  }
+
+  .why-us__feature-content {
+    padding: 22px 20px 24px;
+  }
+
+  .why-us__reason-text {
+    font-size: 14px;
+  }
+
+  .why-us__contract-card {
+    padding: 20px;
+  }
 }

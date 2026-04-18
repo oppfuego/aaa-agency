@@ -28,34 +28,33 @@ export function WhyUs() {
   return (
     <section id="why-us" className={`why-us${isMobile ? " is-mobile" : ""}`}>
       <div className={`why-us__container${isMobile ? " is-mobile" : ""}`}>
+        <span className="why-us__badge">ПЕРЕВАГИ</span>
+        <h2 className={`why-us__title${isMobile ? " is-mobile" : ""}`}>ЛІДЕРИ РИНКУ ПРАЦЮЮТЬ З НАМИ, БО:</h2>
         <div className={`why-us__grid${isMobile ? " is-mobile" : ""}`}>
-          <div>
-            <span className="why-us__badge">ПЕРЕВАГИ</span>
-            <h2 className={`why-us__title${isMobile ? " is-mobile" : ""}`}>ЛІДЕРИ РИНКУ ПРАЦЮЮТЬ З НАМИ, БО:</h2>
-
-            <div className="why-us__reasons">
-              {reasons.map((r, i) => (
-                <div key={i} className="why-us__reason-card">
+          <div className="why-us__features">
+            {reasons.map((r) => (
+              <div key={r.title} className="why-us__feature-card">
+                <div className="why-us__feature-image" />
+                <div className="why-us__feature-content">
                   <div className="why-us__reason-title">{r.title}</div>
                   <div className="why-us__reason-text">{r.text}</div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          <div className="why-us__stats">
+          <div className="why-us__stats-row">
             {stats.map((s) => (
-              <div key={s.value} className={`why-us__stat-card${isMobile ? " is-mobile" : ""}`}>
-                <div className="why-us__stat-glow" />
+              <div key={s.value} className={`why-us__feature-stat${isMobile ? " is-mobile" : ""}`}>
                 <div className={`why-us__stat-value${isMobile ? " is-mobile" : ""}`}>{s.value}</div>
                 <div className="why-us__stat-label">{s.label}</div>
               </div>
             ))}
+          </div>
 
-            <div className="why-us__contract-card">
-              <p className="why-us__contract-title">ФІНАНСОВА ВІДПОВІДАЛЬНІСТЬ</p>
-              <p className="why-us__contract-text">Партнерська модель. Прозорість системи та виконання KPI — зафіксовані в договорі.</p>
-            </div>
+          <div className="why-us__contract-card">
+            <p className="why-us__contract-title">ФІНАНСОВА ВІДПОВІДАЛЬНІСТЬ</p>
+            <p className="why-us__contract-text">Партнерська модель. Прозорість системи та виконання KPI — зафіксовані в договорі.</p>
           </div>
         </div>
       </div>

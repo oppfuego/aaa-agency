@@ -5,7 +5,6 @@ import {PreviewToolbar} from "../components/preview-toolbar/PreviewToolbar";
 import {Header} from "../components/header/Header";
 import {Hero} from "../components/hero/Hero";
 import {VideoSection} from "../components/video-section/VideoSection";
-import {PainPoints} from "../components/pain-points/PainPoints";
 import {Cases} from "../components/cases/Cases";
 import {HowWeWork} from "../components/how-we-work/HowWeWork";
 import {WhyUs} from "../components/why-us/WhyUs";
@@ -14,6 +13,7 @@ import {Reviews} from "../components/reviews/Reviews";
 import {FAQ} from "../components/faq/FAQ";
 import {Footer} from "../components/footer/Footer";
 import {StickyButton} from "../components/sticky-button/StickyButton";
+import {PainPoints} from "../components/pain-points/PainPoints.tsx";
 
 function LandingPage() {
     return (

@@ -18,8 +18,8 @@
 }
 
 .pain-points__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 64px;
   align-items: start;
 
@@ -43,24 +43,44 @@
   }
 }
 
-.pain-points__item {
+.pain-points__left {
+  width: 100%;
+}
+
+.pain-points__cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 16px 0;
-  border-bottom: 1px solid #f0f0f0;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
 
   &.is-mobile {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 12px;
+  }
+}
+
+.pain-points__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  height: 100%;
+  padding: 18px 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background: #fafafa;
+  align-items: flex-start;
+
+  &.is-mobile {
+    padding: 16px 14px;
+    gap: 8px;
   }
 }
 
 .pain-points__pain {
   font-family: "Inter", sans-serif;
   font-weight: 800;
-  font-size: 12px;
+  font-size: 18px;
   color: #ff3333;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -69,7 +89,7 @@
 
 .pain-points__solution {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #555;
   line-height: 1.6;
 }
@@ -87,44 +107,121 @@
   letter-spacing: 1px;
 }
 
-.pain-points__results {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.pain-points__result-card {
-  background: #fafafa;
-  border: 1px solid #eee;
-  border-left: 4px solid #ff3333;
-  border-radius: 0 6px 6px 0;
-  padding: 16px 18px;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  transition: box-shadow 0.2s;
-
-  &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+@media (max-width: 1180px) {
+  .pain-points__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.pain-points__result-icon {
-  font-size: 20px;
-  line-height: 1;
+@media (max-width: 820px) {
+  .pain-points__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .pain-points__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pain-points__results {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.pain-points__results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.pain-points__result-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 22px;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  box-shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(17, 17, 17, 0.12);
+  }
+}
+
+.pain-points__result-image {
+  width: 100%;
+  height: 280px;
+  flex-shrink: 0;
+  background:
+          linear-gradient(145deg, rgba(255, 51, 51, 0.18), rgba(255, 214, 0, 0.06)),
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 35%),
+          linear-gradient(180deg, #272727, #111);
+}
+
+.pain-points__result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 28px 32px;
+  flex: 1;
 }
 
 .pain-points__result-title {
   font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 800;
+  font-size: 14px;
   color: #111;
-  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.35;
 }
 
 .pain-points__result-desc {
   font-family: "Inter", sans-serif;
-  font-size: 12px;
-  color: #666;
-  line-height: 1.55;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .pain-points__results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pain-points__result-card {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pain-points__results-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pain-points__result-card {
+    min-height: 0;
+  }
+
+  .pain-points__result-image {
+    height: 220px;
+  }
+
+  .pain-points__result-content {
+    padding: 22px 20px 24px;
+  }
+
+  .pain-points__result-desc {
+    font-size: 14px;
+  }
 }
