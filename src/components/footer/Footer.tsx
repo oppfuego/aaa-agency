@@ -1,6 +1,7 @@
 import { Instagram, Send } from "lucide-react";
 import { useMobile } from "../../app/hooks/useMobile";
 import "./Footer.scss";
+import logo from '../../assets/logos/logo.png'
 
 export function Footer() {
   const isMobile = useMobile();
@@ -10,13 +11,7 @@ export function Footer() {
       <div className={`footer__container${isMobile ? " is-mobile" : ""}`}>
         <div className={`footer__top${isMobile ? " is-mobile" : ""}`}>
           <a href="#" className="footer__logo">
-            <div className="footer__logo-mark">
-              <span className="footer__logo-mark-text">AAA</span>
-            </div>
-            <div>
-              <div className="footer__logo-title">Agency</div>
-              <div className="footer__logo-subtitle">Системи залучення клієнтів</div>
-            </div>
+            <img src={logo} alt="Логотип" className="logo" />
           </a>
 
           {!isMobile && (
