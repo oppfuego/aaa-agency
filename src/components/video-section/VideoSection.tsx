@@ -17,6 +17,11 @@ const clientLogos = [
   { src: brandLogo5, alt: "Client logo 5" },
 ];
 
+type FullscreenVideoElement = HTMLVideoElement & {
+  webkitEnterFullscreen?: () => void;
+  webkitSupportsFullscreen?: boolean;
+};
+
 export function VideoSection() {
   const isMobile = useMobile();
   const cardRef = useRef<HTMLDivElement | null>(null);
@@ -58,10 +63,18 @@ export function VideoSection() {
       setIsFullscreen(document.fullscreenElement === cardRef.current);
     };
 
+    const video = videoRef.current as FullscreenVideoElement | null;
+    const handleWebkitBeginFullscreen = () => setIsFullscreen(true);
+    const handleWebkitEndFullscreen = () => setIsFullscreen(false);
+
     document.addEventListener("fullscreenchange", handleFullscreenChange);
+    video?.addEventListener("webkitbeginfullscreen", handleWebkitBeginFullscreen as EventListener);
+    video?.addEventListener("webkitendfullscreen", handleWebkitEndFullscreen as EventListener);
 
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      video?.removeEventListener("webkitbeginfullscreen", handleWebkitBeginFullscreen as EventListener);
+      video?.removeEventListener("webkitendfullscreen", handleWebkitEndFullscreen as EventListener);
     };
   }, []);
 
@@ -146,11 +159,32 @@ export function VideoSection() {
 
   const toggleFullscreen = async () => {
     const card = cardRef.current;
-    if (!card) return;
+    const video = videoRef.current as FullscreenVideoElement | null;
+
+    if (!card || !video) return;
 
     if (document.fullscreenElement === card) {
       await document.exitFullscreen();
       return;
+    }
+
+    if (isMobile && typeof video.webkitEnterFullscreen === "function") {
+      try {
+        video.webkitEnterFullscreen();
+        setIsFullscreen(true);
+        return;
+      } catch {
+        setIsFullscreen(false);
+      }
+    }
+
+    if (typeof video.requestFullscreen === "function") {
+      try {
+        await video.requestFullscreen();
+        return;
+      } catch {
+        // Fall through to the card fullscreen fallback below.
+      }
     }
 
     try {
