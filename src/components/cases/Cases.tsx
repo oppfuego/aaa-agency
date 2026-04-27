@@ -1,8 +1,12 @@
 import { useMobile } from "../../app/hooks/useMobile";
 import "./Cases.scss";
+import case1 from "../../assets/images/case1.png";
+import case2 from "../../assets/images/case2.png";
+import case3 from "../../assets/images/case3.png";
 
 const cases = [
   {
+    image: case1,
     client: "EDTECH / UA — ОНЛАЙН IT-АКАДЕМІЯ",
     title: "РІСТ БЮДЖЕТУ З $3,000 ДО $100,000+ / МІС",
     stat: "$2,400,000+",
@@ -10,6 +14,7 @@ const cases = [
     tags: ["220,000+ лідів", "4 країни", "Юніт-економіка"],
   },
   {
+    image: case2,
     client: "CRYPTO EDTECH — DOUBLETOP",
     title: "ПОБУДОВА СИСТЕМИ ЗАЛУЧЕННЯ ХОЛОДНОГО ТРАФІКУ",
     stat: "$200,000+",
@@ -17,6 +22,7 @@ const cases = [
     tags: ["Meta Ads", "YouTube Ads", "110+ роликів", "KPI-Driven"],
   },
   {
+    image: case3,
     client: "EDTECH / UA — STAS AGAPOV P2P",
     title: "$385,000 ВИРУЧКИ / ROMI 620%+",
     stat: "75+",
@@ -24,6 +30,7 @@ const cases = [
     tags: ["Meta Ads", "Viral Hooks"],
   },
   {
+    image: case1,
     client: "EDTECH / EU — NDA",
     title: "$830,000 ПРИБУТКУ · 48,000 ЛІДІВ",
     stat: "ROMI 755%",
@@ -55,9 +62,8 @@ export function Cases() {
                 <div className="cases__stat-sub">{c.statSub}</div>
               </div>
 
-              <div className="cases__placeholder">
-                <span className="cases__placeholder-icon">📊</span>
-                <span className="cases__placeholder-label">Скріншот кабінету</span>
+              <div className="cases__media">
+                <img className="cases__image" src={c.image} alt={c.title} />
               </div>
 
               <div className="cases__tags">

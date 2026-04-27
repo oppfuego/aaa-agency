@@ -40,8 +40,13 @@
 .landing-header__logo {
   display: flex;
   align-items: center;
-  gap: 8px;
   text-decoration: none;
+  justify-content: center;
+}
+
+.logo{
+  width: 100px;
+  height: auto;
 }
 
 .landing-header__logo-mark {

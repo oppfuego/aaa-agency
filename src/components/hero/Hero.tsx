@@ -1,6 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {useCountUp} from "../../app/hooks/useCountUp";
 import {useMobile} from "../../app/hooks/useMobile";
+import heroImage from "../../assets/images/hero-image.png";
 import "./Hero.scss";
 
 const serviceTags = [
@@ -129,49 +130,59 @@ export function Hero() {
             <div className="hero__glow"/>
 
             <div className={`hero__container${isMobile ? " is-mobile" : ""}`}>
-                <div className="hero-fade-1">
-                    <span className="hero__badge">МАРКЕТИНГОВЕ АГЕНТСТВО</span>
-                </div>
+                <div className={`hero__layout${isMobile ? " is-mobile" : ""}`}>
+                    <div className="hero__content">
+                        <div className="hero-fade-1">
+                            <span className="hero__badge">МАРКЕТИНГОВЕ АГЕНТСТВО</span>
+                        </div>
 
-                <h1 className={`hero-fade-2 hero__title${isMobile ? " is-mobile" : ""}`}>
-                    Побудуємо
-                    <br/>
-                    <span className="hero__title-accent">Системи залучення клієнтів</span>
-                    <br/>
-                    що масштабуються x10
-                </h1>
+                        <h1 className={`hero-fade-2 hero__title${isMobile ? " is-mobile" : ""}`}>
+                            Побудуємо
+                            <br/>
+                            <span className="hero__title-accent">Системи залучення клієнтів</span>
+                            <br/>
+                            що масштабуються x10
+                        </h1>
 
-                <p className={`hero-fade-3 hero__description${isMobile ? " is-mobile" : ""}`}>
-                    Від AI-аватарів до performance-воронок — повний цикл залучення та монетизації
-                </p>
+                        <p className={`hero-fade-3 hero__description${isMobile ? " is-mobile" : ""}`}>
+                            Від AI-аватарів до performance-воронок — повний цикл залучення та монетизації
+                        </p>
 
-                <div className="hero-fade-4 hero__tags">
-                    {serviceTags.map((tag) => (
-                        <span key={tag} className={`hero__tag${isMobile ? " is-mobile" : ""}`}>
+                        <div className="hero-fade-4 hero__tags">
+                            {serviceTags.map((tag) => (
+                                <span key={tag} className={`hero__tag${isMobile ? " is-mobile" : ""}`}>
               {tag}
             </span>
-                    ))}
-                </div>
-
-                <div className="hero-fade-5 hero__cta-wrap">
-                    <a href="#cta" className={`hero__cta${isMobile ? " is-mobile" : ""}`}>
-                        ЗАБРОНЮВАТИ ДІАГНОСТИКУ →
-                    </a>
-                </div>
-
-                <div ref={statsRef} className={`hero-fade-5 hero__stats${isMobile ? " is-mobile" : ""}`}>
-                    {stats.map((stat, index) => (
-                        <div key={stat.value} className="hero__stat">
-                            <AnimatedStatValue
-                                delay={index * 100}
-                                duration={1400}
-                                isMobile={isMobile}
-                                shouldStart={hasAnimated}
-                                value={stat.value}
-                            />
-                            <div className="hero__stat-label">{stat.label}</div>
+                            ))}
                         </div>
-                    ))}
+
+                        <div className="hero-fade-5 hero__cta-wrap">
+                            <a href="#cta" className={`hero__cta${isMobile ? " is-mobile" : ""}`}>
+                                ЗАБРОНЮВАТИ ДІАГНОСТИКУ →
+                            </a>
+                        </div>
+
+                        <div ref={statsRef} className={`hero-fade-5 hero__stats${isMobile ? " is-mobile" : ""}`}>
+                            {stats.map((stat, index) => (
+                                <div key={stat.value} className="hero__stat">
+                                    <AnimatedStatValue
+                                        delay={index * 100}
+                                        duration={1400}
+                                        isMobile={isMobile}
+                                        shouldStart={hasAnimated}
+                                        value={stat.value}
+                                    />
+                                    <div className="hero__stat-label">{stat.label}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="hero-fade-4 hero__media">
+                        <div className="hero__image-frame">
+                            <img className="hero__image" src={heroImage} alt="Команда маркетингового агентства AAA" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

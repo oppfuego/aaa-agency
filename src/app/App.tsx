@@ -40,7 +40,6 @@ function AppContent() {
 
     return (
         <div className="app-content">
-            <PreviewToolbar/>
 
             {isMobilePreview ? (
                 <div className="app-preview">

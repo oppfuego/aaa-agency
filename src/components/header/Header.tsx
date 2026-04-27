@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useMobile } from "../../app/hooks/useMobile";
 import { usePreviewContext } from "../../app/context/PreviewContext";
 import "./Header.scss";
+import logo from '../../assets/logos/logo.png'
 
 const navLinks = [
   { label: "Послуги", href: "#services" },
@@ -29,12 +30,7 @@ export function Header() {
     >
       <div className={`landing-header__inner${isMobile ? " is-mobile" : ""}${isMobilePreview ? " is-preview" : ""}`}>
         <a href="#" className="landing-header__logo">
-          <div className="landing-header__logo-mark">
-            <span className="landing-header__logo-mark-text">AAA</span>
-          </div>
-          {!isMobile && (
-            <span className="landing-header__logo-text">Agency</span>
-          )}
+            <img src={logo} alt="Логотип" className="logo" />
         </a>
 
         {!isMobile && (

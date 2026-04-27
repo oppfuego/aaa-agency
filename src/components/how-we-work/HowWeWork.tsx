@@ -1,4 +1,3 @@
-import { useMobile } from "../../app/hooks/useMobile";
 import "./HowWeWork.scss";
 
 const steps = [
@@ -8,50 +7,51 @@ const steps = [
   { num: "04.", title: "МАСШТАБУВАННЯ x10", desc: "Нарощування бюджетів зі збереженням стабільного ROI" },
 ];
 
+const timeline = [
+  "7–10 днів → тестові запуски",
+  "2-й місяць → системні показники",
+  "3–6 місяців → масштабування x10",
+];
+
 export function HowWeWork() {
-  const isMobile = useMobile();
-
   return (
-    <section id="process" className={`how-we-work${isMobile ? " is-mobile" : ""}`}>
-      <div className={`how-we-work__container${isMobile ? " is-mobile" : ""}`}>
-        <div className={`how-we-work__grid${isMobile ? " is-mobile" : ""}`}>
-          <div>
-            <span className="how-we-work__badge">ПРОЦЕС</span>
-            <h2 className={`how-we-work__title${isMobile ? " is-mobile" : ""}`}>ЯК МИ ПРАЦЮЄМО:</h2>
-
-            {steps.map((step, i) => (
-              <div key={i} className={`how-we-work__step${i < steps.length - 1 ? " has-border" : ""}`}>
-                <div className={`how-we-work__step-num${isMobile ? " is-mobile" : ""}`}>{step.num}</div>
-                <div>
-                  <div className="how-we-work__step-title">{step.title}</div>
-                  <div className="how-we-work__step-desc">{step.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="how-we-work__aside">
-            <div className={`how-we-work__timeline${isMobile ? " is-mobile" : ""}`}>
-              <div className="how-we-work__timeline-grid" />
-              <div className="how-we-work__timeline-content">
-                <div className="how-we-work__timeline-label">ВІД ДІАГНОСТИКИ ДО РЕЗУЛЬТАТУ</div>
-                {[
-                  "7–10 днів → тестові запуски",
-                  "2-й місяць → системні показники",
-                  "3–6 місяців → масштабування x10",
-                ].map((item, i) => (
-                  <div key={i} className={`how-we-work__timeline-item${i < 2 ? " has-border" : ""}`}>
+    <section id="process" className="how-we-work">
+      <div className="how-we-work__container">
+        <div className="how-we-work__hero">
+          <div className="how-we-work__timeline">
+            <div className="how-we-work__timeline-grid" />
+            <div className="how-we-work__timeline-content">
+              <p className="how-we-work__timeline-label">ВІД ДІАГНОСТИКИ ДО РЕЗУЛЬТАТУ</p>
+              <div className="how-we-work__timeline-list">
+                {timeline.map((item, i) => (
+                  <div key={item} className={`how-we-work__timeline-item${i < timeline.length - 1 ? " has-border" : ""}`}>
                     <span className="how-we-work__timeline-dot" />
                     <span className="how-we-work__timeline-text">{item}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </div>ч
+          </div>
 
-            <div className="how-we-work__note">
-              <p className="how-we-work__note-title">Не беремо 20 клієнтів одночасно</p>
-              <p className="how-we-work__note-text">Тільки 3–5 партнерів, у чий продукт ми занурюємося на рівні CMO.</p>
-            </div>
+          <div className="how-we-work__note">
+            <p className="how-we-work__note-title">Не беремо 20 клієнтів одночасно</p>
+            <p className="how-we-work__note-text">Тільки 3–5 партнерів, у чий продукт ми занурюємося на рівні CMO.</p>
+          </div>
+        </div>
+
+        <div className="how-we-work__steps-block">
+          <span className="how-we-work__badge">ПРОЦЕС. ЯК МИ ПРАЦЮЄМО:</span>
+
+          <div className="how-we-work__steps-grid">
+            {steps.map((step) => (
+              <article key={step.num} className="how-we-work__step">
+                <div className="how-we-work__step-num">{step.num}</div>
+                <div className="how-we-work__step-body">
+                  <h3 className="how-we-work__step-title">{step.title}</h3>
+                  <p className="how-we-work__step-desc">{step.desc}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

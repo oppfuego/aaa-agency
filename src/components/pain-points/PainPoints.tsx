@@ -1,5 +1,9 @@
 import { useMobile } from "../../app/hooks/useMobile";
 import "./PainPoints.scss";
+import result1 from "../../assets/images/result1.png";
+import result2 from "../../assets/images/result2.png";
+import result3 from "../../assets/images/result3.png";
+import result4 from "../../assets/images/result4.png";
 
 const painItems = [
     {
@@ -25,10 +29,26 @@ const painItems = [
 ];
 
 const results = [
-    { icon: "📈", title: "Прогнозований ROI", desc: "Кожна гривня відстежується від кліку до каси через наскрізну аналітику." },
-    { icon: "🤖", title: "AI-контент 24/7", desc: "ШІ-аватари та автоматизовані воронки, що генерують трафік без вашої участі." },
-    { icon: "🎯", title: "Системне масштабування", desc: "Зростання бюджетів зі збереженням стабільного CAC і ROMI." },
-    { icon: "🎥", title: "Преміум-продакшен", desc: "Відеостудія повного циклу: від сценарію до фінального монтажу." },
+    {
+        image: result1,
+        title: "Прогнозований ROI",
+        desc: "Кожна гривня відстежується від кліку до каси через наскрізну аналітику.",
+    },
+    {
+        image: result2,
+        title: "AI-контент 24/7",
+        desc: "ШІ-аватари та автоматизовані воронки, що генерують трафік без вашої участі.",
+    },
+    {
+        image: result3,
+        title: "Системне масштабування",
+        desc: "Зростання бюджетів зі збереженням стабільного CAC і ROMI.",
+    },
+    {
+        image: result4,
+        title: "Преміум-продакшен",
+        desc: "Відеостудія повного циклу: від сценарію до фінального монтажу.",
+    },
 ];
 
 export function PainPoints() {
@@ -56,10 +76,8 @@ export function PainPoints() {
                         <div className="pain-points__results-grid">
                             {results.map((r) => (
                                 <div key={r.title} className="pain-points__result-card">
-                                    <div className="pain-points__result-image" />
-                                    <div className="pain-points__result-content">
-                                        <div className="pain-points__result-title">{r.title}</div>
-                                        <div className="pain-points__result-desc">{r.desc}</div>
+                                    <div className="pain-points__result-image-wrap">
+                                        <img className="pain-points__result-image" src={r.image} alt={r.title} />
                                     </div>
                                 </div>
                             ))}
